@@ -1,0 +1,57 @@
+﻿<Window x:Class="Moon_Lighter.Level4Window"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Moon_Lighter"
+        mc:Ignorable="d"
+        Title="Moon Lighter" 
+        Height="650" 
+        Width="650" 
+        MinHeight="500"
+        MinWidth="500"
+        ResizeMode="CanResize"
+        Icon="/Photo/Hero.png">
+    <Grid x:Name="FirstLevelGrid" 
+         Style="{DynamicResource GridStyleForGame}"
+          SizeChanged="FirstLevelGrid_SizeChanged" 
+          Loaded="FirstLevelGrid_Loaded">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30*"/>
+            <RowDefinition Height="329*"/>
+            <RowDefinition Height="24*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="84*"/>
+            <ColumnDefinition Width="406*"/>
+            <ColumnDefinition Width="71*"/>
+        </Grid.ColumnDefinitions>
+        <Border 
+            Margin="-3,0,0,0">
+            <Image Source="/Photo/Coin.png" 
+                   HorizontalAlignment="Stretch" 
+                   VerticalAlignment="Center" 
+                   Height="33" 
+                   Width="35"
+                   Margin="10,0,0,0" 
+                   />
+        </Border>
+        <TextBlock
+            Text="0"
+            Name="txtScore"
+            FontSize="14"
+            Style="{DynamicResource TextStyleForCoin}"
+            Height="20"
+            FontFamily="Franklin Gothic Medium" 
+            VerticalAlignment="Center" 
+            HorizontalAlignment="Right" Width="27"/>
+        <Grid  Grid.Row ="1" 
+               Grid.Column="1">
+            <Canvas 
+                HorizontalAlignment="Center"
+                Focusable="True" 
+                Name="MyCanvas" 
+                Width="470" />
+        </Grid>
+    </Grid>
+</Window>

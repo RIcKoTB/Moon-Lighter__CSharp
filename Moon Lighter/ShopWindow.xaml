@@ -1,0 +1,457 @@
+﻿<Window x:Class="Moon_Lighter.ShopWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Moon_Lighter"
+        mc:Ignorable="d"
+        Title="Moon Lighter" 
+        Height="399" 
+        Width="561"
+        MinWidth="200"
+        MinHeight="200"
+        ResizeMode="NoResize" 
+        Icon="/Photo/Hero.png">
+    <Window.Resources>
+
+        <Style TargetType="Button" x:Key="RoundButton">
+            <Setter Property="Control.Background" Value="#0B2240"/>
+            <Setter Property="Control.BorderThickness" Value="1" />
+            <Setter Property="Control.BorderBrush" Value="Black"/>
+            <Setter Property="Control.FontSize" Value="16"/>
+            <Setter Property="Control.Foreground" Value="White"/>
+            <Setter Property="Control.Width" Value="190"/>
+            <Setter Property="Control.Height" Value="38"/>
+            <Setter Property="Control.Cursor" Value="Hand"/>
+            <Style.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="20" />
+                    <Setter Property="Background" Value="#0B2240"/>
+                </Style>
+            </Style.Resources>
+        </Style>
+    </Window.Resources>
+    <Grid Style="{DynamicResource GridStyle}"
+          OpacityMask="Black" 
+          RenderTransformOrigin="0.422,0.456" 
+          MouseEnter="Grid_MouseEnter">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="151*"/>
+            <ColumnDefinition Width="205*"/>
+            <ColumnDefinition Width="195*"/>
+            <ColumnDefinition Width="10*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="18*"/>
+            <RowDefinition Height="39*"/>
+            <RowDefinition Height="133*"/>
+            <RowDefinition Height="126*"/>
+            <RowDefinition Height="67*"/>
+            <RowDefinition Height="0*"/>
+        </Grid.RowDefinitions>
+        <Border Grid.ColumnSpan="4" 
+                Margin="0,14,0,0"
+                Grid.RowSpan="2"
+               Style="{DynamicResource BorderStyl}"
+                BorderBrush="Black" 
+                BorderThickness="0,1,0,1" 
+                Height="41" 
+                VerticalAlignment="Top">
+
+        </Border>
+
+        <TextBlock Text="Shop" 
+                   Style="{DynamicResource TextStyle}"
+                   FontSize="31" 
+                   HorizontalAlignment="Left" 
+                   Margin="10,17,0,2" 
+                   FontFamily="Inter Regular"
+                   Width="75" 
+                   Grid.RowSpan="2"/>
+
+        <Border Grid.RowSpan="4" 
+                Style="{DynamicResource BorderStyl}"
+                Grid.Row="1" 
+                BorderBrush="Black" 
+                BorderThickness="0 0 1 0"
+                Margin="0,37,0,0">
+
+            <Button x:Name="SkinsButton" 
+                    Content="Skins"
+                    Style="{DynamicResource ButtonStyle}"
+                    Margin="0,0,9,261"  
+                    Height="34" Width="135" 
+                    Cursor="Hand" 
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Center" 
+                    Click="SkinsButton_Click"/>
+
+        </Border>
+
+        <Button x:Name="ReturnButton" 
+                Content="Return" 
+                Style="{DynamicResource ButtonStyle}" 
+                Height="34" Width="Auto" 
+                Grid.Row="4" 
+                VerticalAlignment="Center" 
+                Click="ReturnButton_Click" 
+                Margin="4,0,4,0"/>
+        <Button x:Name="FirstItemsBuy"
+            Grid.Row="2" 
+            Margin="0,8,0,0" 
+            Width="140" 
+            Height="110" 
+            Grid.Column="1" 
+            Click="FirsSkinBuy_Click" 
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top" 
+            Cursor="Hand" 
+                Visibility="Hidden">
+            <Button.Template>
+                <ControlTemplate>
+                    <Border 
+                BorderThickness="1" 
+                Grid.Column="1" 
+                Grid.Row="2" 
+                Background="#FF9F86C6"
+                CornerRadius="25" 
+                Visibility="Visible">
+                        <Image 
+                               Source="Photo\Hero2.png"
+                               Margin="13,-1,0,5"
+                               HorizontalAlignment="Left"
+                               Width="135" 
+                               />
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <TextBlock     FontFamily="Inter Regular" 
+                       x:Name="TxtFirstItemsBuy"
+                       Height="14" 
+                       TextWrapping="Wrap" 
+                       Text="Ember | Rare" 
+                       VerticalAlignment="Top" 
+                       Foreground="White"
+                       Panel.ZIndex="123123" 
+                       Grid.Column="1" 
+                       Margin="59,72,47,0" 
+                       Grid.Row="2" 
+                       Visibility="Hidden"/>
+        <Button Height="32" 
+                Panel.ZIndex="1231" 
+                Grid.Column="1" 
+                Grid.Row="2" 
+                Click="FirsSkinBuy_Click"
+                Margin="0,87,0,0" 
+                VerticalAlignment="Top" 
+                HorizontalAlignment="Center" 
+                x:Name="DownFirstItemsBuy"
+                Width="140" 
+                Visibility="Hidden">
+            <Button.Template>
+                <ControlTemplate>
+                    <Border 
+                    BorderThickness="1" 
+                    Grid.Column="1" 
+                    Grid.Row="2" 
+                    Background="#FF5A6680" 
+                    CornerRadius="0 0 25 25" 
+                    Visibility="Visible">
+                        <Image Source="/Photo/Coin.png" 
+                   VerticalAlignment="Top" 
+                   HorizontalAlignment="Left" 
+                   Margin="39,1,0,0" Visibility="Visible"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+
+        <TextBlock x:Name="TextBlockPrice1Item" 
+                   Grid.Column="1" 
+                   FontFamily="Inter Regular" 
+                   HorizontalAlignment="Left" 
+                   Height="15" 
+                   Margin="98,95,0,0" 
+                   Grid.Row="2" 
+                   TextWrapping="Wrap" 
+                   Text="57" 
+                   VerticalAlignment="Top" 
+                   Width="16" 
+                   Panel.ZIndex = "1231"
+                   Foreground="White" Visibility="Hidden"/>
+
+        <Button Grid.Column="2" 
+                Grid.Row="2" 
+                Height="130" 
+                Margin="0,1,0,2" 
+                HorizontalAlignment="Center" 
+                x:Name="SecondItemsBuy"
+                Width="195" 
+                Visibility="Hidden" 
+                Click="SecondItemsBuy_Click">
+            <Button.Template>
+                <ControlTemplate>
+                    <Border  
+                 BorderThickness="1" 
+                 Grid.Column="2" 
+                        Margin="14,7,41,15" 
+                        Grid.Row="2" 
+                 Background="#FFCD9558" 
+                 CornerRadius="25" 
+                        Visibility="Visible">
+                        <Image Source="Photo\Hero3.png" Margin="-1,-7,-13,-7"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+
+        <TextBlock     FontFamily="Inter Regular" 
+                       x:Name="TextBlockNameHero2Item"
+                       Height="Auto" 
+                       TextWrapping="Wrap" 
+                       Text="Axel | Legendary" 
+                       Margin="34,71,0,38"
+                       Foreground="White" Visibility="Hidden" HorizontalAlignment="Left" Width="112" Grid.Row="2" Grid.Column="2"/>
+
+        <Button Height="32" 
+                Panel.ZIndex="1231" 
+                Click="SecondItemsBuy_Click"
+                Grid.Column="2" 
+                Grid.Row="2"
+                x:Name="DownSecondItemsBuy"
+                Margin="0,88,39,0" 
+                VerticalAlignment="Top" 
+                HorizontalAlignment="Right"
+                Width="140" Visibility="Hidden">
+            <Button.Template>
+                <ControlTemplate>
+                    <Border 
+                BorderThickness="1" 
+                Grid.Column="2" 
+                Grid.Row="2" 
+                Background="#FF5A6680" 
+                CornerRadius="0 0 25 25" 
+                        Visibility="Visible">
+                        <Image Source="/Photo/Coin.png" 
+                   VerticalAlignment="Top" 
+                   HorizontalAlignment="Left" 
+                    Visibility="Visible" 
+                               Margin="39,1,0,0"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+
+        <TextBlock x:Name="TextBlockPrice2Item" 
+                   Grid.Column="2" 
+                   FontFamily="Inter Regular" 
+                   HorizontalAlignment="Center" 
+                   Height="15" 
+                   Margin="0,96,0,0" 
+                   Grid.Row="2" 
+                   TextWrapping="Wrap"
+                   Text="70"
+                   VerticalAlignment="Top" 
+                   Width="26" 
+                   Panel.ZIndex="3123124"
+                   Foreground="White" 
+                   Visibility="Hidden" 
+                   RenderTransformOrigin="0.154,0.669"/>
+
+        <Button Grid.Row="2" 
+                Margin="138,131,0,0" 
+                Height="125" 
+                Grid.RowSpan="2"
+                Grid.ColumnSpan="2"
+                x:Name="ThreeItemsBuy"
+                HorizontalAlignment="Left" 
+                Width="205" 
+                VerticalAlignment="Top" 
+                Click="ThreeItemsBuy_Click" 
+                Visibility="Hidden">
+            <Button.Template>
+                <ControlTemplate>
+                    <Border  
+                         BorderThickness="1" 
+                         Grid.Column="1" 
+                        Margin="42,1,23,15" 
+                        Grid.Row="3"
+                         Background="#FFCD9558" 
+                         CornerRadius="25" 
+                        Visibility="Visible">
+                        <Image Source="Photo\Hero4.png" 
+                               Margin="21,1,21,14"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+
+
+        <TextBlock FontFamily="Inter Regular"
+                       x:Name="TextBlockNameHero3Item"
+                       Height="22" 
+                       TextWrapping="Wrap" 
+                       Text="Meshka | Legendary"
+                       Margin="44,70,13,34" 
+                       Foreground="White" 
+                       Visibility="Hidden"
+                       Width="148" 
+                       Grid.Column="1" 
+                       Grid.Row="3"/>
+
+        <Button Grid.Column="1" 
+                Grid.Row="3" 
+                Panel.ZIndex="23131" 
+                Margin="31,85,0,0" 
+                Height="32" 
+                x:Name="DownThreeItemsBuy"
+                Click="ThreeItemsBuy_Click"
+                VerticalAlignment="Top" 
+                HorizontalAlignment="Left" 
+                Width="140" 
+                Visibility="Hidden">
+            <Button.Template>
+                <ControlTemplate>
+                    <Border 
+                        BorderThickness="1" 
+                        Grid.Column="1"
+                        Grid.Row="3" 
+                        Background="#FF5A6680" 
+                        CornerRadius="0 0 25 25" 
+                        Visibility="Visible">
+                        <Image Source="/Photo/Coin.png"
+                        VerticalAlignment="Top" 
+                        HorizontalAlignment="Left"
+                        Margin="39,1,0,0" 
+                               Visibility="Visible"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+
+        <TextBlock  x:Name="TextBlockPrice3Item" 
+                    Grid.Column="1" 
+                    Panel.ZIndex="3213312"
+                    FontFamily="Inter Regular"
+                    HorizontalAlignment="Left" 
+                    Height="89" 
+                    Margin="97,93,0,0" 
+                    Grid.Row="3"
+                    TextWrapping="Wrap" 
+                    Text="35" 
+                    VerticalAlignment="Top" 
+                    Width="15" 
+                    Foreground="White" 
+                    Visibility="Hidden"/>
+
+        <Button Grid.Column="2" 
+                Grid.Row="2" 
+                Width="160" 
+                Height="140" 
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top" 
+                x:Name="FourItemsBuy"
+                Margin="14,128,0,0"
+                Grid.RowSpan="3" 
+                Click="FourItemsBuy_Click" 
+                Visibility="Hidden">
+            <Button.Template>
+                <ControlTemplate>
+                    <Border 
+                       BorderThickness="1" 
+                       Grid.Column="2" 
+                        Margin="-11,-49,10,-30" 
+                        Grid.Row="3"
+                       Background="#FF9F86C6" 
+                       CornerRadius="25" 
+                        Visibility="Visible" 
+                        Height="109" 
+                        Width="140">
+                        <Image Source="Photo\Hero5.png" 
+                               Margin="9,-2,9,3"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+
+        <TextBlock     FontFamily="Inter Regular" 
+                       Height="20" 
+                       TextWrapping="Wrap" 
+                       Text="Dock | Rare" 
+                       x:Name="FourItemsName"
+                       VerticalAlignment="Top" 
+                       Margin="46,72,46,0" 
+                       Foreground="White" 
+                       Visibility="Hidden" 
+                       Grid.Column="2" 
+                       Grid.Row="3"/>
+
+        <Button Grid.Column="2" 
+                Grid.Row="3"
+                Margin="14,86,36,0" 
+                x:Name="DownFourItemsBuy"
+                Click="FourItemsBuy_Click"
+                Height="32" 
+                VerticalAlignment="Top" 
+                Visibility="Hidden">
+            <Button.Template>
+                <ControlTemplate>
+                    <Border 
+                        BorderThickness="1" 
+                        Grid.Column="1"
+                        Grid.Row="3" 
+                        Background="#FF5A6680" 
+                        CornerRadius="0 0 25 25"
+                        Visibility="Visible">
+                        <Image Source="/Photo/Coin.png"
+                        VerticalAlignment="Top" 
+                        HorizontalAlignment="Left"
+                        Margin="39,1,0,0" 
+                        Visibility="Visible"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+
+        <TextBlock  x:Name="TextBlockPrice4Item" 
+                    Grid.Column="2"
+                    FontFamily="Inter Regular" 
+                    HorizontalAlignment="Left" 
+                    Height="15" 
+                    Margin="82,94,0,0" 
+                    Grid.Row="3" 
+                    TextWrapping="Wrap" 
+                    Text="62"
+                    VerticalAlignment="Top"
+                    Width="18" 
+                    Foreground="White" 
+                    Visibility="Hidden"/>
+
+        <Image Source="/Photo/Coin.png" 
+               Grid.Column="2" 
+               Margin="109,7,58,8" 
+               Grid.Row="1"/>
+
+        <TextBlock HorizontalAlignment="Left"
+                 Height="23" 
+                 Margin="136,0,0,0"  
+                 FontFamily="Inter Regular" 
+                 TextWrapping="Wrap" 
+                 Name="txtScore"
+                 Text="0" 
+                 VerticalAlignment="Center" 
+                 Width="82" 
+                 Grid.Column="2" Grid.Row="1" 
+                 Style="{DynamicResource TextStyleForCoin}"
+                   Grid.ColumnSpan="2"/>
+        <Button x:Name="DefaultSkin" 
+            Content="Default skin" 
+            Style="{DynamicResource ButtonStyle}" 
+            Height="34" Width="Auto" 
+            Grid.Row="4" 
+            VerticalAlignment="Center" 
+            Click="DefaultSkin_Click" 
+            Margin="67,0,6,0" Grid.Column="2"/>
+    </Grid>
+</Window>
